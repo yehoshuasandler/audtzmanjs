@@ -1,0 +1,23 @@
+{
+  "name": "audtzman",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "JS application for time tracking and project estimate",
+  "main": "index.js",
+  "scripts": {
+    "tests": "node ./tests//index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuashoemaker/audtzman.git"
+  },
+  "author": "Joshua Shoemaker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshuashoemaker/audtzman/issues"
+  },
+  "homepage": "https://github.com/joshuashoemaker/audtzman#readme",
+  "devDependencies": {
+    "progress": "^2.0.3"
+  }
+}
