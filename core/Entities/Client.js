@@ -1,8 +1,8 @@
 class Client {
   constructor (props) {
-    this.id = props.id
-    this.name = props.name
-    this.initial = props.initial
+    this._id = props.id
+    this._name = props.name
+    this._initial = props.initial
     this.state = props.state
     this.city = props.city
     this.street = props.street
@@ -10,25 +10,62 @@ class Client {
     this.website = props.website
   }
 
-  getId = () => this.id
+  get id () { return this._id }
 
-  getName = () => this.name
+  set id (value) { this._id = value }
 
-  getInitial = () => this.initial
+  get name () { return this._name }
+  
+  set name (newName) {
+    this._name = newName || this._name
+    return this._name
+  }
 
-  getState = () => this.state
+  get initial () { return this._initial }
 
-  getCity = () => this.city
+  set initial (newInitial) {
+    this._initial = newInitial || this._initial
+    return this._initial
+  }
 
-  getStreet = () => this.street
+  get state () { return this._state }
 
-  getPhone = () => this.phone
+  set state (newState) {
+    this._state = newState || this._state
+    return this._state
+  }
 
-  getWebsite = () => this.website
+  get city () { return this._city }
 
-  getProps = () => {
+  set city (newCity) {
+    this._city = newCity || this._city
+    return this._city
+  }
+
+  get street () { return this._street }
+
+  set street (newStreet) {
+    this._street = newStreet || this._street
+    return this._street
+  }
+
+  get phone () { return this._phone }
+
+  set phone (newPhone) {
+    this._phone = newPhone || this._phone
+    return this._phone
+  }
+
+  get website () { return this._website }
+
+  set website (newWebsite) {
+    this._website = newWebsite || this._website
+    return this._website
+  }
+
+  get props () {
     return {
-      id: this.id,
+      id: this._id,
       name: this.name,
       initial: this.initial,
       state: this.state,
@@ -37,41 +74,6 @@ class Client {
       phone: this.phone,
       website: this.website
     }
-  }
-
-  setName = newName => {
-    this.name = newName || this.name
-    return this.name
-  }
-
-  setInitial = newInitial => {
-    this.initial = newInitial || this.initial
-    return this.initial
-  }
-
-  setState = newState => {
-    this.state = newState || this.state
-    return this.state
-  }
-
-  setCity = newCity => {
-    this.city = newCity || this.city
-    return this.city
-  }
-
-  setStreet = newStreet => {
-    this.street = newStreet || this.street
-    return this.street
-  }
-
-  setPhone = newPhone => {
-    this.phone = newPhone || this.phone
-    return this.phone
-  }
-
-  setWebsite = newWebsite => {
-    this.website = newWebsite || this.website
-    return this.website
   }
 }
 

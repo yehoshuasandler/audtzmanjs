@@ -36,103 +36,103 @@ const expectedModifiedOutput = {
 
 const getClientIdTest = () => {
   const client = new Client(input)
-  if (client.getId() === expectedOutput.id) return true
+  if (client.id === expectedOutput.id) return true
   else return false
 }
 
 const getClientNameTest = () => {
   const client = new Client(input)
-  if (client.getName() === expectedOutput.name) return true
+  if (client.name === expectedOutput.name) return true
   else return false
 }
 
 const getClientInitialTest = () => {
   const client = new Client(input)
-  if (client.getInitial() === expectedOutput.initial) return true
+  if (client.initial === expectedOutput.initial) return true
   else return false
 }
 
 const getClientStateTest = () => {
   const client = new Client(input)
-  if (client.getState() === expectedOutput.state) return true
+  if (client.state === expectedOutput.state) return true
   else return false
 }
 
 const getClientCityTest = () => {
   const client = new Client(input)
-  if (client.getCity() === expectedOutput.city) return true
+  if (client.city === expectedOutput.city) return true
   else return false
 }
 
 const getClientStreetTest = () => {
   const client = new Client(input)
-  if (client.getStreet() === expectedOutput.street) return true
+  if (client.street === expectedOutput.street) return true
   else return false
 }
 
 const getClientPhoneTest = () => {
   const client = new Client(input)
-  if (client.getPhone() === expectedOutput.phone) return true
+  if (client.phone === expectedOutput.phone) return true
   else return false
 }
 
 const getClientWebsiteTest = () => {
   const client = new Client(input)
-  if (client.getWebsite() === expectedOutput.website) return true
+  if (client.website === expectedOutput.website) return true
   else return false
 }
 
 const getClientPropsTest = () => {
   const client = new Client(input)
-  if (JSON.stringify(client.getProps()) === JSON.stringify(expectedOutput)) return true
+  if (JSON.stringify(client.props) === JSON.stringify(expectedOutput)) return true
   else return false
 }
 
 const setClientNameTest = () => {
   const client = new Client(input)
-  const newInput = client.setName(expectedModifiedOutput.name)
+  const newInput = client.name = expectedModifiedOutput.name
   if (newInput === expectedModifiedOutput.name) return true
   else return false
 }
 
 const setClientInitialTest = () => {
   const client = new Client(input)
-  const newInput = client.setInitial(expectedModifiedOutput.initial)
+  const newInput = client.initial = expectedModifiedOutput.initial
   if (newInput === expectedModifiedOutput.initial) return true
   else return false
 }
 
 const setClientStateTest = () => {
   const client = new Client(input)
-  const newInput = client.setState(expectedModifiedOutput.state)
+  const newInput = client.state = expectedModifiedOutput.state
   if (newInput === expectedModifiedOutput.state) return true
   else return false
 }
 
 const setClientCityTest = () => {
   const client = new Client(input)
-  const newInput = client.setCity(expectedModifiedOutput.city)
+  const newInput = client.city = expectedModifiedOutput.city
   if (newInput === expectedModifiedOutput.city) return true
   else return false
 }
 
 const setClientStreetTest = () => {
   const client = new Client(input)
-  const newInput = client.setStreet(expectedModifiedOutput.street)
+  const newInput = client.street = expectedModifiedOutput.street
   if (newInput === expectedModifiedOutput.street) return true
   else return false
 }
 
 const setClientPhoneTest = () => {
   const client = new Client(input)
-  const newInput = client.setPhone(expectedModifiedOutput.phone)
+  const newInput = client.phone = expectedModifiedOutput.phone
   if (newInput === expectedModifiedOutput.phone) return true
   else return false
 }
 
 const setClientWebsiteTest = () => {
   const client = new Client(input)
-  const newInput = client.setWebsite(expectedModifiedOutput.website)
+  const newInput = client.website = expectedModifiedOutput.website
   if (newInput === expectedModifiedOutput.website) return true
   else return false
 }
