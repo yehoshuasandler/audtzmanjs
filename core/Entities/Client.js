@@ -3,11 +3,11 @@ class Client {
     this._id = props.id
     this._name = props.name
     this._initial = props.initial
-    this.state = props.state
-    this.city = props.city
-    this.street = props.street
-    this.phone = props.phone
-    this.website = props.website
+    this._state = props.state
+    this._city = props.city
+    this._street = props.street
+    this._phone = props.phone
+    this._website = props.website
   }
 
   get id () { return this._id }
