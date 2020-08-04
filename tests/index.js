@@ -1,6 +1,7 @@
 import ProgressBar from 'progress'
 
 import clientTests from './core/entities/clientTests.js'
+import categoryTests from './core/entities/categoryTests.js'
 
 function runTestsAndReturnFailures (tests) {
   const testTotalCount = tests.length
@@ -35,7 +36,8 @@ function init (tests) {
 }
 
 const testsArray = [
-  clientTests
+  clientTests,
+  categoryTests
 ]
 
 init (testsArray.flat())
