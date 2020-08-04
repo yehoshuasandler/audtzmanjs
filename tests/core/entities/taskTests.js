@@ -1,4 +1,4 @@
-import Task from '../../../core/Entities/Task.js'
+import Task from '../../../src/core/Entities/Task.js'
 
 const input = {
   id: 'ABC',

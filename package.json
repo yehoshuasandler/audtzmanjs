@@ -1,23 +1,29 @@
 {
-  "name": "audtzman",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "JS application for time tracking and project estimate",
+  "name": "audtzmanjs",
+  "version": "0.1.0",
+  "description": "audtzmanjs is a set of base classes used for project tracking for the Audtzman apps",
   "main": "index.js",
   "scripts": {
-    "tests": "node ./tests//index.js"
+    "build": "webpack --mode production",
+    "tests": "node ./tests/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joshuashoemaker/audtzman.git"
+    "url": "git+https://github.com/joshuashoemaker/audtzmanjs.git"
   },
   "author": "Joshua Shoemaker",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joshuashoemaker/audtzman/issues"
+    "url": "https://github.com/joshuashoemaker/audtzmanjs/issues"
   },
-  "homepage": "https://github.com/joshuashoemaker/audtzman#readme",
+  "homepage": "https://github.com/joshuashoemaker/audtzmanjs#readme",
   "devDependencies": {
-    "progress": "^2.0.3"
+    "@babel/core": "^7.11.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "progress": "^2.0.3",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

@@ -1,4 +1,4 @@
-import Project from '../../../core/Entities/Project.js'
+import Project from '../../../src/core/Entities/Project.js'
 
 const input = {
   id: 'ABC',

@@ -1,4 +1,4 @@
-import Client from '../../../core/Entities/Client.js'
+import Client from '../../../src/core/Entities/Client.js'
 
 const input = {
   id: 'ABC',

@@ -1,4 +1,4 @@
-import Category from '../../../core/Entities/Category.js'
+import Category from '../../../src/core/Entities/Category.js'
 
 const input = {
   id: 'ABC',
