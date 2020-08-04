@@ -66,13 +66,13 @@ class Client {
   get props () {
     return {
       id: this._id,
-      name: this.name,
-      initial: this.initial,
-      state: this.state,
-      city: this.city,
-      street: this.street,
-      phone: this.phone,
-      website: this.website
+      name: this._name,
+      initial: this._initial,
+      state: this._state,
+      city: this._city,
+      street: this._street,
+      phone: this._phone,
+      website: this._website
     }
   }
 }
