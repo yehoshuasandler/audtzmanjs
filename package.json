@@ -5,6 +5,7 @@
   "description": "audtzmanjs is a set of base classes used for project tracking for the Audtzman apps",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/index.js",
     "build": "webpack --mode production",
     "tests": "node ./tests/index.js"
   },
@@ -28,6 +29,9 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "colors": "^1.4.0",
+    "console-menu": "^0.1.0",
+    "readline-sync": "^1.4.10",
     "uuid": "^8.3.2"
   }
 }
