@@ -17,20 +17,6 @@ class Project {
     return this.categoryIds
   }
 
-  get id () { return this._id }
-
-  set id (newId) {
-    this._id = newId || this._id
-    return this._id
-  }
-
-  get clientId () { return this._clientId }
-
-  set clientId (newClientId) {
-    this._clientId = newClientId || this._clientId
-    return this._clientId
-  }
-
   get categoryIds () { return this._categoryIds }
 
   set categoryIds (newIds) {
@@ -41,13 +27,6 @@ class Project {
       this._categoryIds = newIds
       return this._categoryIds
     }
-  }
-
-  get name () { return this._name }
-
-  set name (newName) {
-    this._name = newName || this._name
-    return this._name
   }
 
   get props () {

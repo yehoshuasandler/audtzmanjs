@@ -1,6 +1,7 @@
 {
   "name": "audtzmanjs",
   "version": "0.1.0",
+  "type": "module",
   "description": "audtzmanjs is a set of base classes used for project tracking for the Audtzman apps",
   "main": "index.js",
   "scripts": {
@@ -25,5 +26,8 @@
     "progress": "^2.0.3",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
   }
 }
