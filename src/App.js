@@ -4,6 +4,7 @@ import colors from 'colors'
 
 import ProjectStore from './Entities/Stores/ProjectStore.js'
 import ClientStore from './Entities/Stores/ClientStore.js'
+import CategoryStore from './Entities/Stores/CategoryStore.js'
 
 // const rl = readline.createInterface({
 //   input: process.stdin,
@@ -14,13 +15,22 @@ class App {
   constructor (loadedData, writeDataToFile) {
     this.projectStore = new ProjectStore(loadedData.projects)
     this.clientStore = new ClientStore(loadedData.clients)
+    this.categoryStore = new CategoryStore(loadedData.categories)
 
     this.selectedClientId = ''
     this.selectedProjectId = ''
+    this.selectedCategoryId = ''
 
     this.writeDataToFile = writeDataToFile
 
     this.renderMainMenu()
+  }
+
+  renderCreateCategoryMenu = async () => {
+    const categoryName = readline.question(colors.green('\nEnter Category Name"\n'))
+    this.categoryStore.addItem({ label: categoryName })
+    this.save()
+    this.renderSelectCategoryMenu()
   }
 
   renderCreateClientMenu = async () => {
@@ -42,6 +52,23 @@ class App {
       { hotkey: '1', title: 'Select a Client', action: this.renderSelectClientMenu },
       { hotkey: '2', title: 'Add a Client', action: this.renderCreateClientMenu }
     ])
+    selection.action()
+  }
+
+  renderSelectCategoryMenu = async () => {
+    const projectCategories = this.categoryStore.items
+    
+    if (projectCategories.length === 0) {
+      console.log(colors.red('\nCurrently No Categories Stored\n'))
+      this.renderCreateCategoryMenu()
+      return
+    }
+
+    const menuItems = projectCategories.map((category, index) => {
+      return { hotkey: `${index + 1}`, title: category.label, action: () => { this.selectCategoryHandler(category.id) }}
+    })
+
+    const selection = await menu(menuItems)
     selection.action()
   }
 
@@ -85,6 +112,11 @@ class App {
     // })
   }
 
+  selectCategoryHandler = categoryId => {
+    this.selectedCategoryId = categoryId
+    // TODO: describe task menu
+  }
+
   selectClientHandler = clientId => {
     this.selectedClientId = clientId
     this.renderSelectProjectMenu()
@@ -92,7 +124,7 @@ class App {
 
   selectProjectHandler = projectId => {
     this.selectedProjectId = projectId
-    // TODO: render category menu
+    this.renderSelectCategoryMenu()
   }
 }
 
