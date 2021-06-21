@@ -4,8 +4,9 @@ class Task {
     this.parentId = props.parentId
     this.categoryId = props.categoryId
     this.projectId = props.projectId
-    this.name = props.name
     this.description = props.description
+    this.startTime = props.startTime
+    this.endTime = props.endTime
   }
 
   get props () {
@@ -14,8 +15,9 @@ class Task {
       parentId: this.parentId,
       categoryId: this.categoryId,
       projectId: this.projectId,
-      name: this.name,
-      description: this.description
+      description: this.description,
+      startTime: this.startTime,
+      endTime: this.endTime
     }
   }
 

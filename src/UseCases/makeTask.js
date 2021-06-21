@@ -8,7 +8,9 @@ const makeTask = taskProps => {
     categoryId: taskProps.categoryId,
     projectId: taskProps.projectId,
     name: taskProps.name,
-    description: taskProps.description
+    description: taskProps.description,
+    startTime: taskProps.startTime || new Date(),
+    endTime: taskProps.endTime
   })
 
   return newTask

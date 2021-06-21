@@ -1,12 +1,17 @@
 import Task from '../../src/Entities/Task.js'
 
+const startTime = new Date()
+const endTime = new Date()
+
 const input = {
   id: 'ABC',
   parentId: 'QWERT',
   categoryId: 'POI',
   projectId: 'TREWQ',
   name: 'Test Task',
-  description: 'Uploading'
+  description: 'Uploading',
+  startTime: startTime,
+  endTime: endTime
 }
 
 const expectedOutput= {
@@ -14,8 +19,9 @@ const expectedOutput= {
   parentId: 'QWERT',
   categoryId: 'POI',
   projectId: 'TREWQ',
-  name: 'Test Task',
-  description: 'Uploading'
+  description: 'Uploading',
+  startTime: startTime,
+  endTime: endTime
 }
 
 const getProps = () => {
