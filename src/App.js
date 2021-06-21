@@ -5,21 +5,19 @@ import colors from 'colors'
 import ProjectStore from './Entities/Stores/ProjectStore.js'
 import ClientStore from './Entities/Stores/ClientStore.js'
 import CategoryStore from './Entities/Stores/CategoryStore.js'
-
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
+import TaskStore from './Entities/Stores/TaskStore.js'
 
 class App {
   constructor (loadedData, writeDataToFile) {
     this.projectStore = new ProjectStore(loadedData.projects)
     this.clientStore = new ClientStore(loadedData.clients)
     this.categoryStore = new CategoryStore(loadedData.categories)
+    this.taskStore = new TaskStore(loadedData.tasks)
 
     this.selectedClientId = ''
     this.selectedProjectId = ''
     this.selectedCategoryId = ''
+    this.userEnteredTaskDescription = ''
 
     this.writeDataToFile = writeDataToFile
 
@@ -27,7 +25,7 @@ class App {
   }
 
   renderCreateCategoryMenu = async () => {
-    const categoryName = readline.question(colors.green('\nEnter Category Name"\n'))
+    const categoryName = readline.question(colors.green('\nEnter Category Name:\n'))
     this.categoryStore.addItem({ label: categoryName })
     this.save()
     this.renderSelectCategoryMenu()
@@ -45,6 +43,11 @@ class App {
     this.projectStore.addItem({ clientId: this.selectedClientId, name: projectName })
     this.save()
     this.renderSelectProjectMenu()
+  }
+
+  renderTaskDescriptionMenu = async () => {
+    const categoryName = readline.question(colors.green('\nEnter Task Description\n'))
+    this.setTaskDescriptionHandler(categoryName)
   }
 
   renderMainMenu = async () => {
@@ -105,16 +108,28 @@ class App {
   }
 
   save = () => {
-    // write data to file
-    // this.writeDataToFile({
-    //   projects: this.projectStore.props,
-    //   clients: this.clientStore.props
-    // })
+    this.writeDataToFile({
+      projects: this.projectStore.props,
+      clients: this.clientStore.props,
+      categories: this.categoryStore.props,
+      tasks: this.taskStore.props
+    })
+  }
+
+  saveNewTask = () => {
+    const newTaskProps = {
+      categoryId: this.selectedCategoryId,
+      projectId: this.selectedProjectId,
+      description: this.userEnteredTaskDescription
+    }
+
+    this.taskStore.addItem(newTaskProps)
+    this.save()
   }
 
   selectCategoryHandler = categoryId => {
     this.selectedCategoryId = categoryId
-    // TODO: describe task menu
+    this.renderTaskDescriptionMenu()
   }
 
   selectClientHandler = clientId => {
@@ -125,6 +140,11 @@ class App {
   selectProjectHandler = projectId => {
     this.selectedProjectId = projectId
     this.renderSelectCategoryMenu()
+  }
+
+  setTaskDescriptionHandler = taskDescription => {
+    this.userEnteredTaskDescription = taskDescription
+    this.saveNewTask()
   }
 }
 
